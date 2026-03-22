@@ -1,11 +1,349 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Cai Gen Tan - App Support and Privacy Policy</title>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>菜根谭 - 隐私政策与支持</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #0f0e17;
+      color: #e8e3d5;
+      line-height: 1.8;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1208 0%, #2d1f0a 40%, #1a2d1a 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "❧";
+      position: absolute;
+      font-size: 320px;
+      opacity: 0.04;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #c8a84b;
+    }
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #3d2b0a, #1e4a1e);
+      border: 2px solid #c8a84b66;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px #00000088;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #c8a84b;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+    .hero .subtitle {
+      font-size: 1rem;
+      color: #a09070;
+      letter-spacing: 2px;
+    }
+
+    /* Nav tabs */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: #16140f;
+      border-bottom: 1px solid #3a2e1a;
+    }
+    .nav a {
+      display: block;
+      padding: 16px 32px;
+      color: #a09070;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav a:hover, .nav a.active {
+      color: #c8a84b;
+      border-bottom-color: #c8a84b;
+      background: #1e1a10;
+    }
+
+    /* Content */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    section { display: none; }
+    section:target, section#privacy { display: block; }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #c8a84b;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #3a2e1a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card {
+      background: #16140f;
+      border: 1px solid #3a2e1a;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      color: #d4b56a;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .card p, .card li {
+      color: #b0a080;
+      font-size: 0.95rem;
+    }
+    .card ul {
+      padding-left: 20px;
+    }
+    .card li { margin-bottom: 6px; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .feature-item {
+      background: #16140f;
+      border: 1px solid #3a2e1a;
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .feature-item .icon { font-size: 2rem; margin-bottom: 8px; }
+    .feature-item .name { color: #d4b56a; font-size: 0.9rem; margin-bottom: 4px; }
+    .feature-item .desc { color: #7a6a4a; font-size: 0.8rem; }
+
+    .contact-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #b8922a, #c8a84b);
+      color: #1a1208;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-top: 16px;
+      transition: opacity 0.2s;
+    }
+    .contact-btn:hover { opacity: 0.85; }
+
+    .badge {
+      display: inline-block;
+      background: #2a1f08;
+      border: 1px solid #c8a84b44;
+      color: #c8a84b;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      margin-left: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid #3a2e1a;
+      color: #5a4a2a;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .nav a { padding: 14px 16px; font-size: 0.85rem; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Cai Gen Tan App Support and Privacy Policy</h1>
-    <p>Privacy is very important to us. We do not collect any personal data.</p>
+
+<div class="hero">
+  <div class="app-icon">🌿</div>
+  <h1>菜根谭</h1>
+  <p class="subtitle">明·洪应明 著 · 修身处世经典</p>
+</div>
+
+<nav class="nav">
+  <a href="#privacy" class="active">隐私政策</a>
+  <a href="#support">使用支持</a>
+  <a href="#about">关于本书</a>
+</nav>
+
+<div class="container">
+
+  <!-- 隐私政策 -->
+  <section id="privacy">
+    <h2 class="section-title">🔒 隐私政策</h2>
+
+    <div class="card">
+      <h3>基本承诺</h3>
+      <p>菜根谭 App 完全尊重您的隐私。本应用<strong>不收集、不存储、不传输</strong>任何个人信息。所有数据均保存在您的设备本地。</p>
+    </div>
+
+    <div class="card">
+      <h3>我们不收集的信息</h3>
+      <ul>
+        <li>不收集姓名、邮箱或任何账号信息</li>
+        <li>不追踪您的位置</li>
+        <li>不使用广告追踪 SDK</li>
+        <li>不访问相机、麦克风、通讯录</li>
+        <li>不接入任何第三方分析服务</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>本地存储数据</h3>
+      <ul>
+        <li><strong>收藏记录</strong>：您收藏的条目仅存于设备本地</li>
+        <li><strong>阅读进度</strong>：阅读历史和偏好设置仅存于设备</li>
+        <li><strong>日记笔记</strong>：您所写的笔记加密存于本地，从不上传</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Widget 小组件</h3>
+      <p>桌面 Widget 从本地数据库随机取一条格言展示，不访问网络，不产生任何数据传输。</p>
+    </div>
+
+    <div class="card">
+      <h3>App Store 购买</h3>
+      <p>如使用 App 内购买功能，支付流程完全由 Apple App Store 处理。我们不接触任何支付信息。</p>
+    </div>
+
+    <div class="card">
+      <h3>隐私政策更新</h3>
+      <p>如本政策有重大变更，将在 App 更新说明中注明。本政策自 2025 年 3 月起生效。</p>
+    </div>
+  </section>
+
+  <!-- 使用支持 -->
+  <section id="support">
+    <h2 class="section-title">💬 使用支持</h2>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="icon">📖</div>
+        <div class="name">原文阅读</div>
+        <div class="desc">前集·后集完整360则</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🔤</div>
+        <div class="name">注释译文</div>
+        <div class="desc">字词注释 + 白话译文</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🎲</div>
+        <div class="name">随机格言</div>
+        <div class="desc">每日随机一则</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">❤️</div>
+        <div class="name">收藏</div>
+        <div class="desc">收藏喜爱条目</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🔍</div>
+        <div class="name">搜索</div>
+        <div class="desc">全文关键词搜索</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🪟</div>
+        <div class="name">Widget</div>
+        <div class="desc">桌面小组件</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>常见问题</h3>
+      <ul>
+        <li><strong>如何添加 Widget？</strong> 长按桌面 → 点击左上角「+」→ 搜索「菜根谭」</li>
+        <li><strong>收藏在哪里查看？</strong> 点击底部导航栏的「收藏」选项卡</li>
+        <li><strong>如何搜索内容？</strong> 点击首页右上角搜索图标，输入关键词</li>
+        <li><strong>如何切换前集/后集？</strong> 在「全文」页面顶部选择分类</li>
+      </ul>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <h3>联系开发者</h3>
+      <p>如有问题或建议，欢迎通过邮件联系我们：</p>
+      <a class="contact-btn" href="mailto:jok9580955@gmail.com">📬 发送邮件</a>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <h2 class="section-title">📚 关于本书</h2>
+
+    <div class="card">
+      <h3>作品简介</h3>
+      <p>《菜根谭》是明代洪应明所著的一部处世哲学集，融合了儒、释、道三家思想，以格言语录的形式阐述修身、齐家、处世、养生之道。书名取自宋代儒者汪信民"人常咬得菜根，则百事可做"之语意，寓意能耐得清苦方能成大事。</p>
+    </div>
+
+    <div class="card">
+      <h3>主题分类</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+        <span class="badge">🌿 修身</span>
+        <span class="badge">🤝 处世</span>
+        <span class="badge">🏔 自然</span>
+        <span class="badge">☯️ 禅道</span>
+        <span class="badge">🏠 家庭</span>
+        <span class="badge">💛 心性</span>
+        <span class="badge">⭐ 功业</span>
+        <span class="badge">👥 交友</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>关于此 App</h3>
+      <p>本 App 收录《菜根谭》前集·后集共 360 则，每则均配有原文、字词注释和白话译文，并提供分类浏览、全文搜索、收藏管理、Widget 随机展示等功能，致力于为读者提供沉浸式的中国古典文化阅读体验。</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 菜根谭 App · All rights reserved</p>
+  <p style="margin-top:6px;">隐私政策生效日期：2025年3月</p>
+</footer>
+
+<script>
+  // Simple tab switching without page reload
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+      const target = this.getAttribute('href').slice(1);
+      document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+      document.getElementById(target).style.display = 'block';
+    });
+  });
+</script>
+
 </body>
 </html>
